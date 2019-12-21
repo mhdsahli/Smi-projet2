@@ -1,0 +1,85 @@
+<app-base-layout></app-base-layout>
+<!-- banner part start-->
+<div class="container">
+  <div class="row mb-5">
+    <div class="col-lg-8">
+      <h2 class="margin-bottom-1x">Page nouveautés:Gérer les articles</h2>
+      <form *ngIf="newsForm" [formGroup]="newsForm" (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+          <label class="col-2 col-form-label" for="titre">Titre</label>
+          <div class="col-10">
+            <input class="form-control form-control-square form-control-sm" formControlName="titre" type="text"
+                   id="titre" value="">
+            <div *ngIf="!newsForm.get('titre').valid && newsForm.get('titre').touched" class="form-control-feedback">
+              Veuillez entrer le titre de votre article
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label" for="id">Id</label>
+          <div class="col-10">
+            <input class="form-control form-control-square form-control-sm" formControlName="id" type="number" id="id"
+                   value="0">
+            <div *ngIf="!newsForm.get('id').valid && newsForm.get('id').touched" class="form-control-feedback">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-2 col-form-label" for="date-input">Date de création</label>
+          <div class="col-10">
+            <input class="form-control" type="date" id="date-input" formControlName="date" value="">
+            <div *ngIf="!newsForm.get('date').valid && newsForm.get('date').touched" class="form-control-feedback">
+              Veuillez entrer une date de votre article
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <label class="col-2 col-form-label" for="description">Description de l'article</label>
+          <div class="col-10">
+            <textarea class="form-control form-control-square form-control-sm" formControlName="description"
+                      id="description" rows="5">
+            </textarea>
+            <div *ngIf="!newsForm.get('description').valid && newsForm.get('description').touched"
+                 class="form-control-feedback">
+              Veuillez entrer une description de votre article.
+            </div>
+          </div>
+        </div>
+
+          <div class="dropzone" dropzone
+               (hovered)="toggleHover($event)"
+               (dropped)="onDrop($event)"
+               [class.hovering]="isHovering">
+
+
+            <h3>Image d'un article</h3>
+            <p>Ajouter une image par un Drag and Drop </p>
+          </div>
+
+          <h3>Téléchargement</h3>
+
+          <div *ngFor="let file of files">
+            <upload-task [file]="file" (onNewEntryAdded)="addNewEntry($event)"></upload-task>
+          </div>
+
+
+        <div class="row mb-5">
+          <div class="col text-right">
+           <!-- <button [disabled]="(mode === 'add')" class="btn btn-danger" type="button" (click)="onDelete()">Supprimer
+              l'article
+            </button>-->
+            <button class="btn btn-primary" type="submit">Enregistrer l'article</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

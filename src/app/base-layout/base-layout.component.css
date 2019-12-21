@@ -1,0 +1,43 @@
+.top-bar ul {
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+}
+#top-header-menu li {
+  display: inline;
+  padding: 10px;
+}
+
+.top-bar {
+  background: #1FA67A;
+  line-height: 40px;
+  height: 40px;
+}
+.top-bar a {
+  color: #fff;
+}
+
+.top-bar #social {
+  text-align: right;
+}.top-bar ul {
+   list-style: none;
+   margin: 0 10px;
+   padding: 0;
+ }
+#top-header-menu li {
+  display: inline;
+  padding: 10px;
+}
+
+.top-bar {
+  background: #8F2010;
+  line-height: 40px;
+  height: 40px;
+}
+.top-bar a {
+  color: #fff;
+}
+
+.top-bar #social {
+  text-align: right;
+}

@@ -1,0 +1,56 @@
+<app-base-layout></app-base-layout>
+
+
+<!--================Blog Area =================-->
+<section class="blog_area section_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <div class="blog_left_sidebar">
+
+          <article *ngFor="let news of newsList" class="blog_item" >
+            <div class="blog_item_img">
+              <img class="card-img rounded-0" src= {{news.imageUrl}} alt="">
+              <a href="#" class="blog_item_date">
+                <h3>{{news.date}}</h3>
+              </a>
+            </div>
+
+            <div class="blog_details">
+              <a class="d-inline-block" href="single-blog.html">
+                <h2>{{news.titre}}</h2>
+              </a>
+              <p>{{news.description}}</p>
+              <ul class="blog-info-link">
+                <li><a href="#"><i class="far fa-user"></i> Nouveau projet</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <nav class="blog-pagination justify-content-center d-flex">
+            <ul class="pagination">
+              <li class="page-item">
+                <a href="#" class="page-link" aria-label="Previous">
+                  <i class="ti-angle-left"></i>
+                </a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link">1</a>
+              </li>
+              <li class="page-item active">
+                <a href="#" class="page-link">2</a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link" aria-label="Next">
+                  <i class="ti-angle-right"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

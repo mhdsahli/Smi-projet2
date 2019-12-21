@@ -1,0 +1,17 @@
+
+.carousel{
+  background: #2f4357;
+  margin-top: 20px;
+margin-left: 50px;
+}
+.carousel-item{
+  text-align: center;
+  min-height: 280px;
+}
+.bs-example{
+  margin: 20px;
+}
+.img {
+  width: 1500px;
+  height: 600px;
+}
